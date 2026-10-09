@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "snapshot_date": "2026-10-09",
+    "sampled_at": "2026-10-09T23:18:52+08:00",
+    "method": "MCP calculate-price 到店自取（beType=1/orderType=1）；门店口径：各城市核心商圈 24h/深夜营业门店",
+    "product_codes": "巨无霸 1100 / 中薯条 4810（全国统一编码）",
+    "price_unit": "分（fen），除以 100 展示为元"
+  },
+  "basket": [
+    {"code": "1100", "name": "巨无霸"},
+    {"code": "4810", "name": "中薯条"}
+  ],
+  "cities": [
+    {"city": "重庆", "store": "金鹰财富中心餐厅（解放碑）", "storeCode": "3450149", "hours": "07:00-23:59", "bigmac": 2900, "fries": 1450, "total": 4350},
+    {"city": "成都", "store": "锦江总府路茂业百货餐厅（春熙路商圈）", "storeCode": "3450339", "hours": "24h", "bigmac": 2650, "fries": 1450, "total": 4100},
+    {"city": "武汉", "store": "江汉路大汉口餐厅", "storeCode": "1960138", "hours": "24h", "bigmac": 2650, "fries": 1400, "total": 4050},
+    {"city": "西安", "store": "开元餐厅（钟楼）", "storeCode": "1960622", "hours": "24h", "bigmac": 2650, "fries": 1450, "total": 4100},
+    {"city": "哈尔滨", "store": "中央大街餐厅", "storeCode": "3230011", "hours": "06:00-03:00", "bigmac": 2650, "fries": 1450, "total": 4100},
+    {"city": "郑州", "store": "西太康路新华书店餐厅（二七商圈）", "storeCode": "3560134", "hours": "24h", "bigmac": 2650, "fries": 1450, "total": 4100},
+    {"city": "北京", "store": "团结湖餐厅（三里屯商圈）", "storeCode": "1950050", "hours": "24h", "bigmac": 2600, "fries": 1450, "total": 4050},
+    {"city": "上海", "store": "华旭国际大厦餐厅（人民广场）", "storeCode": "1450713", "hours": "24h", "bigmac": 2550, "fries": 1350, "total": 3900},
+    {"city": "广州", "store": "天源路餐厅（天河）", "storeCode": "1400359", "hours": "24h", "bigmac": 2550, "fries": 1350, "total": 3900},
+    {"city": "深圳", "store": "人民南路餐厅（罗湖口岸）", "storeCode": "1420244", "hours": "24h", "bigmac": 2550, "fries": 1350, "total": 3900},
+    {"city": "长沙", "store": "五一路平和堂餐厅（五一广场）", "storeCode": "3390081", "hours": "24h", "bigmac": 2550, "fries": 1350, "total": 3900}
+  ],
+  "derived": {
+    "bigmac_range": "25.5 - 29.0",
+    "bigmac_max_min_spread_pct": "13.7%",
+    "basket_max_min_spread_pct": "11.5%",
+    "observations": [
+      "重庆解放碑巨无霸 29.0 元全国最贵，比上海贵 3.5 元（+13.7%）",
+      "一线城市四城（25.5-26.0）全部低于西部新一线（成渝西 26.5-29.0）",
+      "同档城市内部价格高度一致：沪穗深长四城完全同价（25.5/13.5），显示定价按城市档位分区"
+    ]
+  }
+}
