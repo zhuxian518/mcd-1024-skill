@@ -1,0 +1,17 @@
+# 环境变量与密钥 —— 严禁提交真实 MCP Token
+.env
+.env.*
+*.local
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 编辑器
+.vscode/
+.idea/
+
+# 临时与日志
+*.log
+tmp/
