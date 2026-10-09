@@ -1,0 +1,7 @@
+{
+  "orders": [],
+  "tasteProfile": { "clusters": {}, "spiceLevel": null, "avgSpend": null },
+  "favoriteStores": [],
+  "firstUse": null,
+  "note": "麦麦老友记记忆银行。首次真实下单后由 Skill 自动写入；orders 记录点餐历史（order-list 最多可导入最近 10 单），tasteProfile 每 3 单重算一次。此文件仅存本地。"
+}
