@@ -34,19 +34,20 @@
 ## 架构
 
 ```mermaid
-flowchart LR
-    U["👤 用户一句话<br/>今天中午吃啥，30以内多点蛋白"]
+flowchart TB
+    U["👤 用户一句话：今天中午吃啥，30以内多点蛋白"]
 
     subgraph L1["① 决策层 · 就它了"]
+        direction LR
         A1["query-meals<br/>菜单候选池"] --> A2["list-nutrition-foods<br/>营养硬约束"] --> A3["query-store-coupons<br/>配券"] --> A4["calculate-price<br/>官方核价"]
     end
 
     subgraph L2["② 记忆层 · 老朋友 & 尝个新"]
-        B1[("data/memory.json<br/>本地记忆银行")] --> B2["复购安全牌<br/>+ 探索新欢"]
+        B1[("💾 data/memory.json<br/>本地记忆银行")] --> B2["复购安全牌 + 探索新欢"]
     end
 
     subgraph L3["③ 指数层 · 麦麦小知识"]
-        C1["每日采样<br/>21城 calculate-price"] --> C2[("data/snapshots/<br/>价格快照")] --> C3["每日一句<br/>城市价差/时点提示"]
+        C1["每日采样 21 城<br/>calculate-price"] --> C2[("📊 data/snapshots/<br/>价格快照")] --> C3["每日一句<br/>城市价差 / 时点提示"]
     end
 
     U --> L1
@@ -54,7 +55,7 @@ flowchart LR
     L2 -.->|"两个备选"| U
     L3 -.->|"每日一条"| U
     A4 -->|"下单后回写"| B1
-    C2 -->|"说看指数"| U
+    C2 -->|"说「看指数」"| U
 ```
 
 **一次对话，三个时间维度各司其职**：决策层处理"现在"，记忆层沉淀"过去"，指数层给出"宏观"。官方 10 个 MCP 工具的完整编排见 [MCP_INTEGRATION.md](MCP_INTEGRATION.md)。
