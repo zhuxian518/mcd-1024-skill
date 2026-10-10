@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "snapshot_date": "2026-10-10",
+    "sampled_at": "2026-10-10T10:47:33+08:00",
+    "method": "MCP calculate-price 到店自取（beType=1/orderType=1）；门店口径：各城市核心商圈门店，午餐时段统一采样",
+    "product_codes": "巨无霸 1100 / 中薯条 4810（全国统一编码）",
+    "price_unit": "分（fen），除以 100 展示为元",
+    "sampling_notes": "早餐时段（约 10:15/10:44 前）正餐商品整体不可售（错误码 60006），采样须在午餐时段进行；早餐期菜单完全切换为早餐类目"
+  },
+  "basket": [
+    {"code": "1100", "name": "巨无霸"},
+    {"code": "4810", "name": "中薯条"}
+  ],
+  "cities": [
+    {"city": "重庆", "store": "金鹰财富中心餐厅（解放碑）", "storeCode": "3450149", "bigmac": 2900, "fries": 1450, "total": 4350},
+    {"city": "成都", "store": "锦江总府路茂业百货餐厅（春熙路商圈）", "storeCode": "3450339", "bigmac": 2650, "fries": 1450, "total": 4100},
+    {"city": "西安", "store": "开元餐厅（钟楼）", "storeCode": "1960622", "bigmac": 2650, "fries": 1450, "total": 4100},
+    {"city": "哈尔滨", "store": "中央大街餐厅", "storeCode": "3230011", "bigmac": 2650, "fries": 1450, "total": 4100},
+    {"city": "郑州", "store": "西太康路新华书店餐厅（二七商圈）", "storeCode": "3560134", "bigmac": 2650, "fries": 1450, "total": 4100},
+    {"city": "杭州", "store": "西湖银泰餐厅", "storeCode": "3330052", "bigmac": 2650, "fries": 1450, "total": 4100},
+    {"city": "沈阳", "store": "中街朝阳餐厅（中街地铁B2）", "storeCode": "3230028", "bigmac": 2650, "fries": 1450, "total": 4100},
+    {"city": "大连", "store": "福佳餐厅（西安路）", "storeCode": "3230046", "bigmac": 2650, "fries": 1450, "total": 4100},
+    {"city": "厦门", "store": "美都餐厅（中山路）", "storeCode": "1410017", "bigmac": 2650, "fries": 1450, "total": 4100},
+    {"city": "乌鲁木齐", "store": "天山百货大楼餐厅（南门）", "storeCode": "6180006", "bigmac": 2650, "fries": 1450, "total": 4100},
+    {"city": "兰州", "store": "万象城餐厅（东方红广场）", "storeCode": "5170030", "bigmac": 2650, "fries": 1450, "total": 4100},
+    {"city": "天津", "store": "滨江四餐厅（滨江道）", "storeCode": "1980090", "bigmac": 2650, "fries": 1450, "total": 4100},
+    {"city": "武汉", "store": "江汉路大汉口餐厅", "storeCode": "1960138", "bigmac": 2650, "fries": 1400, "total": 4050},
+    {"city": "北京", "store": "团结湖餐厅（三里屯商圈）", "storeCode": "1950050", "bigmac": 2600, "fries": 1450, "total": 4050},
+    {"city": "青岛", "store": "台东餐厅（台东商圈）", "storeCode": "3350012", "bigmac": 2600, "fries": 1450, "total": 4050},
+    {"city": "上海", "store": "华旭国际大厦餐厅（人民广场）", "storeCode": "1450713", "bigmac": 2550, "fries": 1350, "total": 3900},
+    {"city": "广州", "store": "天源路餐厅（天河）", "storeCode": "1400359", "bigmac": 2550, "fries": 1350, "total": 3900},
+    {"city": "深圳", "store": "人民南路餐厅（罗湖口岸）", "storeCode": "1420244", "bigmac": 2550, "fries": 1350, "total": 3900},
+    {"city": "长沙", "store": "五一路平和堂餐厅（五一广场）", "storeCode": "3390081", "bigmac": 2550, "fries": 1350, "total": 3900},
+    {"city": "南京", "store": "洪武餐厅（新街口）", "storeCode": "1990043", "bigmac": 2550, "fries": 1350, "total": 3900},
+    {"city": "昆明", "store": "鸿城广场餐厅（南屏街）", "storeCode": "3570004", "bigmac": 2550, "fries": 1350, "total": 3900}
+  ],
+  "derived": {
+    "city_count": 21,
+    "bigmac_range": "25.5 - 29.0",
+    "bigmac_max_min_spread_pct": "13.7%",
+    "price_tiers": [
+      {"tier": "29.0", "cities": ["重庆"]},
+      {"tier": "26.5", "cities": ["成都","西安","哈尔滨","郑州","杭州","沈阳","大连","厦门","乌鲁木齐","兰州","天津"]},
+      {"tier": "26.0", "cities": ["北京","青岛"]},
+      {"tier": "25.5", "cities": ["上海","广州","深圳","长沙","南京","昆明"]}
+    ],
+    "vs_2026_10_09": "原11城价格全部与昨日一致（重庆29.0/北京26.0/沪穗深长25.5），价差结构跨日稳定；新增10城中杭州/沈阳/大连/厦门/乌鲁木齐/兰州/天津落入26.5档，青岛26.0，南京/昆明25.5",
+    "observations": [
+      "重庆解放碑连续两日全国最贵（29.0），比最便宜档贵 13.7%",
+      "价格呈台阶状分布且跨日完全稳定：29.0 / 26.5 / 26.0 / 25.5 四档，城市档位定价模型进一步确认",
+      "新发现：南京、昆明属 25.5 最低档（与一线城市同档）；青岛与北京同档 26.0",
+      "早餐时段（~10:44前）正餐商品全国不可售（60006），菜单按时段整班切换"
+    ]
+  }
+}
