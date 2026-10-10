@@ -1,6 +1,12 @@
-# 麦麦老友记 McMates
+# 🍔 麦麦老友记 McMates
 
-> 只给一个答案的麦当劳点餐 Skill——它记得你点过的每一单，也顺带告诉你今天全国的巨无霸卖多少钱。
+**只给一个答案的麦当劳点餐 Skill**——它记得你点过的每一单，也顺带告诉你今天全国的巨无霸卖多少钱。
+
+![MCP](https://img.shields.io/badge/MCP-mcd--mcp-D9541E?logo=materialdesignicons&logoColor=white)
+![Platform](https://img.shields.io/badge/平台-WorkBuddy_/_任意MCP客户端-3B6D11)
+![指数覆盖](https://img.shields.io/badge/麦麦指数-21城_realtime-854F0B)
+![License](https://img.shields.io/badge/License-MIT-378ADD)
+![麦当劳程序员创意开发大赛](https://img.shields.io/badge/麦当劳程序员创意开发大赛-参赛作品-D9541E)
 
 ## 项目介绍
 
