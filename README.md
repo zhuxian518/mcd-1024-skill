@@ -34,28 +34,24 @@
 ## 架构
 
 ```mermaid
-flowchart TB
-    U["👤 用户一句话：今天中午吃啥，30以内多点蛋白"]
-
-    subgraph L1["① 决策层 · 就它了"]
-        direction LR
-        A1["query-meals<br/>菜单候选池"] --> A2["list-nutrition-foods<br/>营养硬约束"] --> A3["query-store-coupons<br/>配券"] --> A4["calculate-price<br/>官方核价"]
+flowchart TD
+    U["👤 用户: 今天中午吃啥, 30以内多点蛋白"]
+    subgraph WB["麦麦老友记 (WorkBuddy Agent)"]
+        direction TB
+        D["决策层: 菜单池 → 营养约束 → 配券 → 核价<br/>输出唯一推荐 + 三行理由"]
+        M2[("💾 本地记忆银行<br/>data/memory.json")]
+        X["指数层: 21城采样 → 快照<br/>输出麦麦小知识"]
     end
+    M["麦当劳 MCP<br/>mcp.mcd.cn"]
 
-    subgraph L2["② 记忆层 · 老朋友 & 尝个新"]
-        B1[("💾 data/memory.json<br/>本地记忆银行")] --> B2["复购安全牌 + 探索新欢"]
-    end
-
-    subgraph L3["③ 指数层 · 麦麦小知识"]
-        C1["每日采样 21 城<br/>calculate-price"] --> C2[("📊 data/snapshots/<br/>价格快照")] --> C3["每日一句<br/>城市价差 / 时点提示"]
-    end
-
-    U --> L1
-    L1 -->|"唯一推荐 + 三行理由"| U
-    L2 -.->|"两个备选"| U
-    L3 -.->|"每日一条"| U
-    A4 -->|"下单后回写"| B1
-    C2 -->|"说「看指数」"| U
+    U -->|"意图+条件"| D
+    D -->|"query-meals / nutrition<br/>coupons / calculate-price"| M
+    D -->|"下单后回写订单"| M2
+    M2 -->|"老朋友 & 尝个新"| D
+    D -->|"每日首次推荐触发采样"| M
+    M -->|"21城价格"| X
+    X -->|"看指数"| U
+    D -->|"🍔 就它了 + 两个备选 + 小知识"| U
 ```
 
 **一次对话，三个时间维度各司其职**：决策层处理"现在"，记忆层沉淀"过去"，指数层给出"宏观"。官方 10 个 MCP 工具的完整编排见 [MCP_INTEGRATION.md](MCP_INTEGRATION.md)。
