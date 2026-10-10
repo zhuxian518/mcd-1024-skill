@@ -35,23 +35,9 @@
 
 ```mermaid
 flowchart TD
-    U["👤 用户: 今天中午吃啥, 30以内多点蛋白"]
-    subgraph WB["麦麦老友记 (WorkBuddy Agent)"]
-        direction TB
-        D["决策层: 菜单池 → 营养约束 → 配券 → 核价<br/>输出唯一推荐 + 三行理由"]
-        M2[("💾 本地记忆银行<br/>data/memory.json")]
-        X["指数层: 21城采样 → 快照<br/>输出麦麦小知识"]
-    end
-    M["麦当劳 MCP<br/>mcp.mcd.cn"]
-
-    U -->|"意图+条件"| D
-    D -->|"query-meals / nutrition<br/>coupons / calculate-price"| M
-    D -->|"下单后回写订单"| M2
-    M2 -->|"老朋友 & 尝个新"| D
-    D -->|"每日首次推荐触发采样"| M
-    M -->|"21城价格"| X
-    X -->|"看指数"| U
-    D -->|"🍔 就它了 + 两个备选 + 小知识"| U
+    U["👤 用户: 今天中午吃啥, 30以内多点蛋白"] --> A["🤖 麦麦老友记 Agent<br/>决策层: 菜单→营养→配券→核价 = 唯一推荐<br/>记忆层: 本地记忆银行 = 老朋友&尝个新<br/>指数层: 21城采样 = 麦麦小知识"]
+    A <-->|"query / calculate-price / 下单回写"| M["麦当劳 MCP<br/>mcp.mcd.cn"]
+    A -->|"🍔 就它了 + 备选 + 小知识"| U
 ```
 
 **一次对话，三个时间维度各司其职**：决策层处理"现在"，记忆层沉淀"过去"，指数层给出"宏观"。官方 10 个 MCP 工具的完整编排见 [MCP_INTEGRATION.md](MCP_INTEGRATION.md)。
