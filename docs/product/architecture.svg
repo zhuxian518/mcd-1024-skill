@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg aria-labelledby="title desc" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1000" role="img">
+  <title id="title">麦麦老友记：Skill与工具调用边界</title>
+  <desc id="desc">宿主执行Skill并调用官方MCP。写操作必须得到用户明确确认。本地JSON不等于全链路离线；概念原型不连接任何服务。</desc>
+  <rect width="1100" height="1000" fill="#fbf7ef" />
+  <text font-family="sans-serif" font-size="27" font-weight="700" x="50" y="45" fill="#34251e">麦麦老友记 / 系统边界</text>
+  <text font-family="sans-serif" font-size="14" font-weight="400" x="50" y="70" fill="#34251e">按现有Skill绘制 · AI协作制作 · 未验证实时MCP</text>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#a25b36" />
+    </marker>
+  </defs>
+  <path stroke-width="2" marker-end="url(#arrow)" d="M270 130 H335" fill="none" stroke="#a25b36" />
+  <text font-family="sans-serif" font-size="13" font-weight="400" x="285" y="115" fill="#34251e">需求</text>
+  <path stroke-width="2" marker-end="url(#arrow)" d="M475 180 V255" fill="none" stroke="#a25b36" />
+  <text font-family="sans-serif" font-size="13" font-weight="400" x="490" y="224" fill="#34251e">加载执行</text>
+  <path stroke-width="2" marker-end="url(#arrow)" d="M610 305 H725" fill="none" stroke="#a25b36" />
+  <text font-family="sans-serif" font-size="13" font-weight="400" x="620" y="280" fill="#34251e">只读查询/返回</text>
+  <path stroke-width="2" marker-end="url(#arrow)" d="M340 335 H180 V440" fill="none" stroke="#a25b36" />
+  <text font-family="sans-serif" font-size="13" font-weight="400" x="60" y="400" fill="#34251e">进入复核</text>
+  <path stroke-width="2" marker-end="url(#arrow)" d="M310 495 H725" fill="none" stroke="#a25b36" />
+  <text font-family="sans-serif" font-size="13" font-weight="400" x="340" y="480" fill="#34251e">明确确认 → 宿主调用</text>
+  <path stroke-width="2" marker-end="url(#arrow)" d="M880 370 V440" fill="none" stroke="#a25b36" />
+  <text font-family="sans-serif" font-size="13" font-weight="400" x="900" y="410" fill="#34251e">服务端</text>
+  <path stroke-width="2" marker-end="url(#arrow)" d="M500 360 V620" fill="none" stroke="#a25b36" />
+  <text font-family="sans-serif" font-size="13" font-weight="400" x="515" y="590" fill="#34251e">成功后记订单</text>
+  <rect x="50" y="90" width="220" height="90" rx="12" fill="#fff4df" stroke="#a25b36" />
+  <text font-family="sans-serif" font-size="18" font-weight="700" x="68" y="122" fill="#34251e">用户</text>
+  <text font-family="sans-serif" font-size="13" font-weight="400" x="68" y="150" fill="#34251e">需求 / 逐项确认</text>
+  <rect x="340" y="90" width="270" height="90" rx="12" fill="#ffe5cd" stroke="#a25b36" />
+  <text font-family="sans-serif" font-size="18" font-weight="700" x="358" y="122" fill="#34251e">Markdown Skill</text>
+  <text font-family="sans-serif" font-size="13" font-weight="400" x="358" y="150" fill="#34251e">流程与约束；非服务端</text>
+  <rect x="340" y="260" width="270" height="100" rx="12" fill="#ffe5cd" stroke="#a25b36" />
+  <text font-family="sans-serif" font-size="18" font-weight="700" x="358" y="292" fill="#34251e">宿主 AI / MCP 客户端</text>
+  <text font-family="sans-serif" font-size="13" font-weight="400" x="358" y="320" fill="#34251e">读取指令 · 参数校验 · 凭据注入</text>
+  <rect x="50" y="445" width="260" height="100" rx="12" fill="#fff4df" stroke="#a25b36" />
+  <text font-family="sans-serif" font-size="18" font-weight="700" x="68" y="477" fill="#34251e">用户明确确认具体写操作</text>
+  <text font-family="sans-serif" font-size="13" font-weight="400" x="68" y="505" fill="#34251e">门店 / 商品 / 金额 / 影响</text>
+  <rect x="730" y="260" width="300" height="110" rx="12" fill="#f0ece3" stroke="#a25b36" />
+  <text font-family="sans-serif" font-size="18" font-weight="700" x="748" y="292" fill="#34251e">官方 MCP 服务边界</text>
+  <text font-family="sans-serif" font-size="13" font-weight="400" x="748" y="320" fill="#34251e">菜单 / 营养 / 券 / 核价 / 订单</text>
+  <rect x="365" y="625" width="280" height="95" rx="12" fill="#f0ece3" stroke="#a25b36" />
+  <text font-family="sans-serif" font-size="18" font-weight="700" x="383" y="657" fill="#34251e">本地 JSON 文件</text>
+  <text font-family="sans-serif" font-size="13" font-weight="400" x="383" y="685" fill="#34251e">偏好 / 订单 / 带日期快照</text>
+  <rect x="730" y="445" width="300" height="100" rx="12" fill="#fff0e7" stroke="#a25b36" />
+  <text font-family="sans-serif" font-size="18" font-weight="700" x="748" y="477" fill="#34251e">需确认的官方写操作</text>
+  <text font-family="sans-serif" font-size="13" font-weight="400" x="748" y="505" fill="#34251e">领券 / create-order / cancel-order</text>
+  <rect x="50" y="800" width="980" height="70" rx="12" fill="#f0ece3" stroke="#a25b36" />
+  <text font-family="sans-serif" font-size="18" font-weight="700" x="68" y="832" fill="#34251e">隔离 HTML 概念原型</text>
+  <text font-family="sans-serif" font-size="13" font-weight="400" x="68" y="860" fill="#34251e">固定合成数据；无账户 / 网络 / 订单</text>
+  <text font-family="sans-serif" font-size="15" font-weight="400" x="50" y="760" fill="#34251e">凭据只在宿主配置中注入；接口schema与权限以实际服务为准。</text>
+  <text font-family="sans-serif" font-size="15" font-weight="400" x="50" y="925" fill="#34251e">本地存储 ≠ 模型处理全链路离线；HTML原型与官方服务没有连接。</text>
+</svg>

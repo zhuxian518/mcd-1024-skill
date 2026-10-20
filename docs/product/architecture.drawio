@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="architecture" name="产品边界">
+    <mxGraphModel dx="1100" dy="1000" grid="1" gridSize="10" page="1" pageWidth="1100" pageHeight="1000">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="user" value="用户&#10;需求 / 逐项确认" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff4df;strokeColor=#a25b36;fontColor=#34251e;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="50" y="90" width="220" height="90" />
+        </mxCell>
+        <mxCell id="skill" value="Markdown Skill&#10;流程与约束；非服务端" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffe5cd;strokeColor=#a25b36;fontColor=#34251e;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="340" y="90" width="270" height="90" />
+        </mxCell>
+        <mxCell id="host" value="宿主 AI / MCP 客户端&#10;读取指令 · 参数校验 · 凭据注入" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffe5cd;strokeColor=#a25b36;fontColor=#34251e;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="340" y="260" width="270" height="100" />
+        </mxCell>
+        <mxCell id="review" value="用户明确确认具体写操作&#10;门店 / 商品 / 金额 / 影响" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff4df;strokeColor=#a25b36;fontColor=#34251e;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="50" y="445" width="260" height="100" />
+        </mxCell>
+        <mxCell id="mcp" value="官方 MCP 服务边界&#10;菜单 / 营养 / 券 / 核价 / 订单" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#f0ece3;strokeColor=#a25b36;fontColor=#34251e;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="730" y="260" width="300" height="110" />
+        </mxCell>
+        <mxCell id="local" value="本地 JSON 文件&#10;偏好 / 订单 / 带日期快照" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#f0ece3;strokeColor=#a25b36;fontColor=#34251e;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="365" y="625" width="280" height="95" />
+        </mxCell>
+        <mxCell id="write" value="需确认的官方写操作&#10;领券 / create-order / cancel-order" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0e7;strokeColor=#a25b36;fontColor=#34251e;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="730" y="445" width="300" height="100" />
+        </mxCell>
+        <mxCell id="demo" value="隔离 HTML 概念原型&#10;固定合成数据；无账户 / 网络 / 订单" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#f0ece3;strokeColor=#a25b36;fontColor=#34251e;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="50" y="800" width="980" height="70" />
+        </mxCell>
+        <mxCell id="edge0" value="提出需求" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontColor=#634433;fontSize=13;" edge="1" parent="1" source="user" target="skill">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge1" value="宿主加载执行" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontColor=#634433;fontSize=13;" edge="1" parent="1" source="skill" target="host">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge2" value="只读查询 / 实时返回" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontColor=#634433;fontSize=13;" edge="1" parent="1" source="host" target="mcp">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge3" value="交易前复核" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontColor=#634433;fontSize=13;" edge="1" parent="1" source="host" target="review">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge4" value="明确同意后，宿主才调用" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontColor=#634433;fontSize=13;" edge="1" parent="1" source="review" target="write">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge5" value="服务端处理" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontColor=#634433;fontSize=13;" edge="1" parent="1" source="mcp" target="write">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge6" value="必要数据读写；成功订单才记账" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontColor=#634433;fontSize=13;" edge="1" parent="1" source="host" target="local">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
