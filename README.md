@@ -51,7 +51,7 @@ flowchart TD
     S -->|"🍔 就它了 + 备选 + 小知识"| U
 ```
 
-**一次对话，三个时间维度各司其职**：决策层处理"现在"，记忆层沉淀"过去"，指数层给出"宏观"。官方 10 个 MCP 工具的完整编排见 [MCP_INTEGRATION.md](MCP_INTEGRATION.md)。
+**一次对话，三个时间维度各司其职**：决策层处理"现在"，记忆层沉淀"过去"，指数层给出"宏观"。Skill 引用的 MCP 工具编排见 [MCP_INTEGRATION.md](MCP_INTEGRATION.md)。
 
 <details>
 <summary>📊 首期麦麦巨无霸指数（2026-10-09 深夜实测 11 城）</summary>
@@ -106,13 +106,13 @@ flowchart TD
 
 ## 隐私与安全
 
-- 记忆库只存本地（`data/memory.json`），不上传、不联网
+- 记忆库存于本地（`data/memory.json`）；客户端与接口的数据处理边界见下文
 - 领券、下单等写操作前必须经你逐项确认，绝不静默执行
 - 指数采样只用只读接口，不触碰账户资产
 
 ## 技术栈
 
-- 麦当劳官方 MCP Server（`https://mcp.mcd.cn`），10 个工具的三层编排：详见 [MCP_INTEGRATION.md](MCP_INTEGRATION.md)
+- 麦当劳官方 MCP Server（`https://mcp.mcd.cn`），指令所引用工具的编排：详见 [MCP_INTEGRATION.md](MCP_INTEGRATION.md)
 - WorkBuddy（开发与运行环境）
 
 ## 参赛信息
@@ -123,3 +123,13 @@ flowchart TD
 ## License
 
 [MIT](LICENSE)
+
+## 运行、数据与维护说明
+
+本仓库是由 AI 客户端执行的 Skill 指令及 JSON 数据，没有独立程序、自动采样进程或 Python/npm 安装步骤。触发与输入输出见 [SKILL.md](SKILL.md)；接口前提、调用顺序与失败处理见 [MCP_INTEGRATION.md](MCP_INTEGRATION.md)。客户端需能调用 MCP、读写本地工作目录；各客户端导入 Skill 和注入环境变量的方式可能不同。
+
+[mcp-config.example.json](mcp-config.example.json) 使用 `${MCD_MCP_TOKEN}` 占位符，只有客户端支持环境变量展开时才会生效；否则在客户端的私密配置中安全注入，不能把真实 Token 提交到仓库。历史快照存于 `data/snapshots/`，是带日期的门店采样，不代表当前价格或全国所有门店。
+
+`data/memory.json` 保存订单、评分、偏好和常用门店；投入个人使用前先检查现有内容并保留备份，个人运行副本不要推回公共仓库。所谓「本地记忆」指 JSON 文件的存储位置；AI 客户端可能将读取到的内容发送给模型服务商，官方接口也会处理请求所需数据，不能理解为整个工作流不联网。不要把完整记忆库传给搜索或无关接口；有删除需求时由用户决定备份、清理哪些记录，不因「只增不删」规则阻止用户管理个人数据。
+
+维护验证：检查 Skill 中工具名与已连接服务实际暴露的能力一致，核对 JSON 可解析与相对链接；先用不消费的只读流程检查门店、菜单、价格单位和失败提示，再由用户决定是否授权写操作。仓库没有自动测试脚本。本次文档核对未连接账户、未验证实时接口，历史开发记录不代表当前服务可用性。
